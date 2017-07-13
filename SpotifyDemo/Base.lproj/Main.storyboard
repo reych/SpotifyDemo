@@ -1,26 +1,252 @@
-<?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11134" systemVersion="15F34" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="12121" systemVersion="16E195" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="R1c-Nz-PSx">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11106"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="12089"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--View Controller-->
-        <scene sceneID="tne-QT-ifu">
+        <!--Spotify Login View Controller-->
+        <scene sceneID="0MD-Ba-8xD">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="ViewController" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="R1c-Nz-PSx" customClass="SpotifyLoginViewController" customModule="SpotifySDKDemo" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
-                        <viewControllerLayoutGuide type="top" id="y3c-jy-aDJ"/>
-                        <viewControllerLayoutGuide type="bottom" id="wfy-db-euE"/>
+                        <viewControllerLayoutGuide type="top" id="IqV-eW-kIS"/>
+                        <viewControllerLayoutGuide type="bottom" id="t1d-48-MTC"/>
                     </layoutGuides>
-                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
+                    <view key="view" contentMode="scaleToFill" id="FbM-Zq-79P">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="yvl-lM-hC8">
+                                <rect key="frame" x="94" y="306" width="187" height="55"/>
+                                <color key="backgroundColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="55" id="H4R-es-oMI"/>
+                                    <constraint firstAttribute="width" constant="187" id="doJ-Xr-mDP"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="19"/>
+                                <state key="normal" title="Login with spotify">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="loginButtonPressed:" destination="R1c-Nz-PSx" eventType="touchUpInside" id="xIl-nM-M2T"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="eS0-fM-CAd">
+                                <rect key="frame" x="83" y="410" width="209" height="55"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="55" id="gRc-7D-LD9"/>
+                                    <constraint firstAttribute="width" constant="209" id="qZ8-DT-WFB"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="17"/>
+                                <state key="normal" title="Continue without logging in">
+                                    <color key="titleColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                </state>
+                                <connections>
+                                    <action selector="continueButtonPressed:" destination="R1c-Nz-PSx" eventType="touchUpInside" id="mcb-pp-Ec7"/>
+                                </connections>
+                            </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Or" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="yEg-pF-DBx">
+                                <rect key="frame" x="178" y="381" width="19" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Note: You must log in to a Spotify Premium Account to stream music. Otherwise, you may play a 30 second sample of each track." textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="5" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="2W4-UT-Nsp">
+                                <rect key="frame" x="50" y="473" width="275" height="93"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="93" id="QjN-CA-TRJ"/>
+                                    <constraint firstAttribute="width" constant="275" id="ZaP-ve-8bz"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <color key="textColor" red="0.23229031735751293" green="0.23229031735751293" blue="0.23229031735751293" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="2W4-UT-Nsp" firstAttribute="centerX" secondItem="FbM-Zq-79P" secondAttribute="centerX" id="HGH-6e-BsY"/>
+                            <constraint firstItem="yvl-lM-hC8" firstAttribute="centerX" secondItem="FbM-Zq-79P" secondAttribute="centerX" id="IYu-8O-oE1"/>
+                            <constraint firstItem="2W4-UT-Nsp" firstAttribute="top" secondItem="eS0-fM-CAd" secondAttribute="bottom" constant="8" id="K6K-ES-Gg7"/>
+                            <constraint firstItem="yEg-pF-DBx" firstAttribute="centerX" secondItem="FbM-Zq-79P" secondAttribute="centerX" id="UaI-bg-qUA"/>
+                            <constraint firstItem="yEg-pF-DBx" firstAttribute="top" secondItem="yvl-lM-hC8" secondAttribute="bottom" constant="20" id="YXK-XC-s1i"/>
+                            <constraint firstItem="eS0-fM-CAd" firstAttribute="top" secondItem="yEg-pF-DBx" secondAttribute="bottom" constant="8" id="YdS-vq-Jmi"/>
+                            <constraint firstItem="yvl-lM-hC8" firstAttribute="top" secondItem="IqV-eW-kIS" secondAttribute="bottom" constant="286" id="gvl-02-dph"/>
+                            <constraint firstItem="eS0-fM-CAd" firstAttribute="centerX" secondItem="FbM-Zq-79P" secondAttribute="centerX" id="saJ-vA-ED0"/>
+                        </constraints>
                     </view>
+                    <connections>
+                        <segue destination="5Di-vo-4UE" kind="show" identifier="SpotifyLoginToPlaylist" id="p6V-TY-ivf"/>
+                    </connections>
                 </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="lqs-rX-GMd" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
+            <point key="canvasLocation" x="564" y="492.50374812593708"/>
+        </scene>
+        <!--Spotify View Controller-->
+        <scene sceneID="Nae-WU-dwm">
+            <objects>
+                <viewController id="5Di-vo-4UE" customClass="SpotifyViewController" customModule="SpotifySDKDemo" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="H2q-PR-vBO"/>
+                        <viewControllerLayoutGuide type="bottom" id="vLd-L0-6eh"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="ApW-VE-LLs">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="QNB-MA-ZqP">
+                                <rect key="frame" x="16" y="325" width="343" height="275"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="SZU-nA-6lv">
+                                    <size key="itemSize" width="98" height="197"/>
+                                    <size key="headerReferenceSize" width="0.0" height="0.0"/>
+                                    <size key="footerReferenceSize" width="0.0" height="0.0"/>
+                                    <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
+                                </collectionViewFlowLayout>
+                                <cells>
+                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="playlistCell" id="bk5-ha-2xP" customClass="PlaylistCollectionViewCell" customModule="SpotifySDKDemo" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="0.0" width="98" height="197"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
+                                            <rect key="frame" x="0.0" y="0.0" width="98" height="197"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="bxX-of-iIq">
+                                                    <rect key="frame" x="0.0" y="0.0" width="98" height="98"/>
+                                                </imageView>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="1" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="KdZ-21-cRE">
+                                                    <rect key="frame" x="0.0" y="79" width="20" height="19"/>
+                                                    <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="height" constant="19" id="zAr-f5-gqU"/>
+                                                    </constraints>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Title asdfsadfasdfsdfasd" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="rQQ-jq-Zgs">
+                                                    <rect key="frame" x="0.0" y="103" width="98" height="41"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="asdfasdfasdfasdfasdfsdf" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="aQR-Lb-NGH">
+                                                    <rect key="frame" x="0.0" y="142" width="98" height="45"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                            </subviews>
+                                        </view>
+                                        <constraints>
+                                            <constraint firstItem="KdZ-21-cRE" firstAttribute="leading" secondItem="rQQ-jq-Zgs" secondAttribute="leading" id="4C8-UM-eYx"/>
+                                            <constraint firstAttribute="trailing" secondItem="bxX-of-iIq" secondAttribute="trailing" id="7nl-6L-vMJ"/>
+                                            <constraint firstItem="bxX-of-iIq" firstAttribute="bottom" secondItem="KdZ-21-cRE" secondAttribute="bottom" id="FnN-n2-k9P"/>
+                                            <constraint firstItem="rQQ-jq-Zgs" firstAttribute="top" secondItem="KdZ-21-cRE" secondAttribute="bottom" constant="5" id="O9n-ph-9Hy"/>
+                                            <constraint firstItem="KdZ-21-cRE" firstAttribute="top" secondItem="bk5-ha-2xP" secondAttribute="topMargin" constant="71" id="Upj-uj-yvr"/>
+                                            <constraint firstAttribute="bottomMargin" secondItem="rQQ-jq-Zgs" secondAttribute="bottom" constant="45" id="Wfl-Ma-Fs9"/>
+                                            <constraint firstAttribute="trailingMargin" secondItem="KdZ-21-cRE" secondAttribute="trailing" constant="70" id="aVI-EX-e3Q"/>
+                                            <constraint firstItem="rQQ-jq-Zgs" firstAttribute="trailing" secondItem="aQR-Lb-NGH" secondAttribute="trailing" id="gH2-Cc-4o8"/>
+                                            <constraint firstItem="bxX-of-iIq" firstAttribute="leading" secondItem="bk5-ha-2xP" secondAttribute="leading" id="gIt-08-zuV"/>
+                                            <constraint firstItem="bxX-of-iIq" firstAttribute="trailing" secondItem="rQQ-jq-Zgs" secondAttribute="trailing" id="ivm-7G-lI1"/>
+                                            <constraint firstItem="bxX-of-iIq" firstAttribute="top" secondItem="bk5-ha-2xP" secondAttribute="top" id="jSE-sc-p2M"/>
+                                            <constraint firstAttribute="bottomMargin" secondItem="aQR-Lb-NGH" secondAttribute="bottom" constant="2" id="n6J-bc-oNM"/>
+                                            <constraint firstItem="rQQ-jq-Zgs" firstAttribute="leading" secondItem="aQR-Lb-NGH" secondAttribute="leading" id="qAT-ex-7rK"/>
+                                            <constraint firstItem="aQR-Lb-NGH" firstAttribute="top" secondItem="KdZ-21-cRE" secondAttribute="bottom" constant="44" id="sGA-2W-NnK"/>
+                                            <constraint firstItem="bxX-of-iIq" firstAttribute="leading" secondItem="KdZ-21-cRE" secondAttribute="leading" id="siQ-Of-hSq"/>
+                                        </constraints>
+                                        <connections>
+                                            <outlet property="albumImage" destination="bxX-of-iIq" id="7H0-qq-PEq"/>
+                                            <outlet property="artistLabel" destination="aQR-Lb-NGH" id="Wiy-Wh-JTU"/>
+                                            <outlet property="indexLabel" destination="KdZ-21-cRE" id="sqi-IQ-4Nd"/>
+                                            <outlet property="titleLabel" destination="rQQ-jq-Zgs" id="cAn-QQ-Pn2"/>
+                                        </connections>
+                                    </collectionViewCell>
+                                </cells>
+                                <connections>
+                                    <outlet property="dataSource" destination="5Di-vo-4UE" id="Cbo-J9-pZo"/>
+                                    <outlet property="delegate" destination="5Di-vo-4UE" id="uaT-9b-59U"/>
+                                </connections>
+                            </collectionView>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="8wa-4H-keM">
+                                <rect key="frame" x="0.0" y="28" width="375" height="211"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="375" id="GZc-Ii-9VG"/>
+                                    <constraint firstAttribute="height" constant="211" id="uJL-5P-Qxx"/>
+                                </constraints>
+                            </imageView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Zvh-8C-QgE">
+                                <rect key="frame" x="0.0" y="608" width="375" height="59"/>
+                                <color key="backgroundColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="59" id="AHW-7M-nzG"/>
+                                    <constraint firstAttribute="width" constant="375" id="yk7-sg-f5I"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="17"/>
+                                <state key="normal" title="PLAY">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="playPauseButtonPressed:" destination="5Di-vo-4UE" eventType="touchUpInside" id="73I-Nn-QEQ"/>
+                                </connections>
+                            </button>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Rlt-HD-nYR">
+                                <rect key="frame" x="0.0" y="247" width="375" height="70"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="May 1" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="cii-fF-f3O">
+                                        <rect key="frame" x="31" y="0.0" width="84" height="21"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Pirelli Spotify Playlist" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="apX-os-EYk">
+                                        <rect key="frame" x="31" y="22" width="270" height="40"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="28"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                </subviews>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="375" id="2ra-xg-awp"/>
+                                    <constraint firstAttribute="height" constant="70" id="by7-Lw-U98"/>
+                                </constraints>
+                            </view>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="8wa-4H-keM" firstAttribute="leading" secondItem="ApW-VE-LLs" secondAttribute="leading" id="6Ec-hY-Ee8"/>
+                            <constraint firstItem="Zvh-8C-QgE" firstAttribute="leading" secondItem="ApW-VE-LLs" secondAttribute="leading" id="8BR-dX-s8d"/>
+                            <constraint firstAttribute="trailing" secondItem="Zvh-8C-QgE" secondAttribute="trailing" id="B3N-7E-rF6"/>
+                            <constraint firstItem="vLd-L0-6eh" firstAttribute="top" secondItem="Zvh-8C-QgE" secondAttribute="bottom" id="NSR-3j-4xl"/>
+                            <constraint firstItem="Rlt-HD-nYR" firstAttribute="top" secondItem="8wa-4H-keM" secondAttribute="bottom" constant="8" id="bst-B1-HM6"/>
+                            <constraint firstItem="QNB-MA-ZqP" firstAttribute="top" secondItem="Rlt-HD-nYR" secondAttribute="bottom" constant="8" symbolic="YES" id="cIn-Lc-T2H"/>
+                            <constraint firstItem="8wa-4H-keM" firstAttribute="top" secondItem="H2q-PR-vBO" secondAttribute="bottom" constant="8" id="eZi-q1-XY0"/>
+                            <constraint firstAttribute="trailing" secondItem="8wa-4H-keM" secondAttribute="trailing" id="fBM-u4-LOO"/>
+                            <constraint firstItem="Zvh-8C-QgE" firstAttribute="top" secondItem="QNB-MA-ZqP" secondAttribute="bottom" constant="8" symbolic="YES" id="mgI-eu-HxK"/>
+                            <constraint firstItem="QNB-MA-ZqP" firstAttribute="leading" secondItem="ApW-VE-LLs" secondAttribute="leadingMargin" id="ufX-eu-Y37"/>
+                            <constraint firstAttribute="trailing" secondItem="Rlt-HD-nYR" secondAttribute="trailing" id="vcV-RY-2n1"/>
+                            <constraint firstItem="QNB-MA-ZqP" firstAttribute="centerX" secondItem="Zvh-8C-QgE" secondAttribute="centerX" id="vuN-9j-v8j"/>
+                            <constraint firstItem="Rlt-HD-nYR" firstAttribute="leading" secondItem="ApW-VE-LLs" secondAttribute="leading" id="xN4-n4-iYx"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="collectionView" destination="QNB-MA-ZqP" id="EnB-hx-DGR"/>
+                        <outlet property="coverImage" destination="8wa-4H-keM" id="Anz-EX-XRc"/>
+                        <outlet property="playPauseButton" destination="Zvh-8C-QgE" id="AkP-gw-Oxe"/>
+                        <outlet property="titleLabel" destination="apX-os-EYk" id="6JI-H9-4xb"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="BYr-km-dFS" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1340" y="492.50374812593708"/>
         </scene>
     </scenes>
 </document>

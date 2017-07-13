@@ -5,6 +5,22 @@
    <BuildAction
       parallelizeBuildables = "YES"
       buildImplicitDependencies = "YES">
+      <BuildActionEntries>
+         <BuildActionEntry
+            buildForTesting = "YES"
+            buildForRunning = "YES"
+            buildForProfiling = "YES"
+            buildForArchiving = "YES"
+            buildForAnalyzing = "YES">
+            <BuildableReference
+               BuildableIdentifier = "primary"
+               BlueprintIdentifier = "CEC7CF4C1F17D1B000B0FF7D"
+               BuildableName = "SpotifyDemo.app"
+               BlueprintName = "SpotifyDemo"
+               ReferencedContainer = "container:SpotifyDemo.xcodeproj">
+            </BuildableReference>
+         </BuildActionEntry>
+      </BuildActionEntries>
    </BuildAction>
    <TestAction
       buildConfiguration = "Debug"
@@ -12,7 +28,36 @@
       selectedLauncherIdentifier = "Xcode.DebuggerFoundation.Launcher.LLDB"
       shouldUseLaunchSchemeArgsEnv = "YES">
       <Testables>
+         <TestableReference
+            skipped = "NO">
+            <BuildableReference
+               BuildableIdentifier = "primary"
+               BlueprintIdentifier = "CEC7CF601F17D1B000B0FF7D"
+               BuildableName = "SpotifyDemoTests.xctest"
+               BlueprintName = "SpotifyDemoTests"
+               ReferencedContainer = "container:SpotifyDemo.xcodeproj">
+            </BuildableReference>
+         </TestableReference>
+         <TestableReference
+            skipped = "NO">
+            <BuildableReference
+               BuildableIdentifier = "primary"
+               BlueprintIdentifier = "CEC7CF6B1F17D1B000B0FF7D"
+               BuildableName = "SpotifyDemoUITests.xctest"
+               BlueprintName = "SpotifyDemoUITests"
+               ReferencedContainer = "container:SpotifyDemo.xcodeproj">
+            </BuildableReference>
+         </TestableReference>
       </Testables>
+      <MacroExpansion>
+         <BuildableReference
+            BuildableIdentifier = "primary"
+            BlueprintIdentifier = "CEC7CF4C1F17D1B000B0FF7D"
+            BuildableName = "SpotifyDemo.app"
+            BlueprintName = "SpotifyDemo"
+            ReferencedContainer = "container:SpotifyDemo.xcodeproj">
+         </BuildableReference>
+      </MacroExpansion>
       <AdditionalOptions>
       </AdditionalOptions>
    </TestAction>
@@ -26,6 +71,16 @@
       debugDocumentVersioning = "YES"
       debugServiceExtension = "internal"
       allowLocationSimulation = "YES">
+      <BuildableProductRunnable
+         runnableDebuggingMode = "0">
+         <BuildableReference
+            BuildableIdentifier = "primary"
+            BlueprintIdentifier = "CEC7CF4C1F17D1B000B0FF7D"
+            BuildableName = "SpotifyDemo.app"
+            BlueprintName = "SpotifyDemo"
+            ReferencedContainer = "container:SpotifyDemo.xcodeproj">
+         </BuildableReference>
+      </BuildableProductRunnable>
       <AdditionalOptions>
       </AdditionalOptions>
    </LaunchAction>
@@ -35,6 +90,16 @@
       savedToolIdentifier = ""
       useCustomWorkingDirectory = "NO"
       debugDocumentVersioning = "YES">
+      <BuildableProductRunnable
+         runnableDebuggingMode = "0">
+         <BuildableReference
+            BuildableIdentifier = "primary"
+            BlueprintIdentifier = "CEC7CF4C1F17D1B000B0FF7D"
+            BuildableName = "SpotifyDemo.app"
+            BlueprintName = "SpotifyDemo"
+            ReferencedContainer = "container:SpotifyDemo.xcodeproj">
+         </BuildableReference>
+      </BuildableProductRunnable>
    </ProfileAction>
    <AnalyzeAction
       buildConfiguration = "Debug">
