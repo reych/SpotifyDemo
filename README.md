@@ -71,7 +71,7 @@ We will break this up into three parts: (1) Downloading the SDK and importing fr
 Classes
 -----------------------------------------------
 1. *SpotifyManager: NSObject, SPTAudioStreamingPlaybackDelegate, SPTAudioStreamingDelegate*  
-  Manages Spotify login and streaming, playback. Implements Spotify
+  Singleton that manages Spotify login and streaming, playback.
 
 2. *SpotifyViewController: UIViewController, UICollectionViewDelegate, UICollectionViewDataSource*  
   The ViewController that contains the playlist. Has a collection view that displays clickable albums.
