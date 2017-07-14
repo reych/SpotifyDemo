@@ -68,7 +68,9 @@ We will break this up into three parts: (1) Downloading the SDK and importing fr
     * Identifier: bundle identifier+identifier  (com.company.ProjectName.spotify-auth)
     * URL scheme: first section of callback URL (if your callback was spotify-test-login://callback, then url scheme is spotify-test-login).  
   
-  After this you can copy the files: SpotifyManager.swift, SpotifyViewController.swift, SpotifyLoginViewController.swift, PlaylistCollectionViewCell.swift, Main.storybord, SpotifyDemo-Bridging-Header.h (if you didn't make this...may need to update the path in Project settings)
+  After this you can copy the files: SpotifyManager.swift, SpotifyViewController.swift, SpotifyLoginViewController.swift, PlaylistCollectionViewCell.swift, Main.storybord, SpotifyDemo-Bridging-Header.h (if you didn't make this...may need to update the path in Project settings)  
+
+  Update the client id and secret in SpotifyManager.swift.
 
 Classes
 -----------------------------------------------
