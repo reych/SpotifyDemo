@@ -52,16 +52,16 @@ We will break this up into three parts: (1) Downloading the SDK and importing fr
   * Go to My Applications and **CREATE AN APP**
   * Fill in the following:
 
-    **Application Name:** name of your application
-    **Description:** Describe it.
+    **Application Name:** name of your application  
+    **Description:** Describe it.  
     **Redirect URIs:** This can be anything, really. Follow format <unique-prefix>://<callback>. We're using this for the login function, so you can call it something like login://returnAfterLogin.
-    **Bundle ID:** This is the ID for your project, of the form com.company.ProjectName
+    **Bundle ID:** This is the ID for your project, of the form com.company.ProjectName  
 
     Make note of the client ID and secret, this will be used later.
 
   * Save.
 
-3. Update XCode project.
+3. **Update XCode project**  
   * In Build Settings -> Other Linker flags -> add **-ObjC** and **$(inherited)**
   * In Build Phases -> Link binary with libraries: SpotifyMetadata.framework, SpotifyAudioPlayback.framework, SpotifyAuthentication.framework
   * In Info -> Add URL type:
@@ -70,7 +70,7 @@ We will break this up into three parts: (1) Downloading the SDK and importing fr
 
 Classes
 -----------------------------------------------
-1. *SpotifyManager: NSObject, SPTAudioStreamingPlaybackDelegate, SPTAudioStreamingDelegate* 
+1. *SpotifyManager: NSObject, SPTAudioStreamingPlaybackDelegate, SPTAudioStreamingDelegate*  
   Manages Spotify login and streaming, playback. Implements Spotify
 
 2. *SpotifyViewController: UIViewController, UICollectionViewDelegate, UICollectionViewDataSource*  
@@ -81,8 +81,3 @@ Classes
 
 4. *PlaylistCollectionViewCell: UICollectionViewCell*  
   Custom cell for the collection view used in SpotifyViewController.  
-
-The PlayerViewController contains a movieURL, which it loads asynchronously into an AVURLAsset, which is then made into an AVPlayerItem. The AVPlayer will play the AVPlayerItem.  
-
-To integrate with another project, pass a movieURL into the PlayerViewController.
-
