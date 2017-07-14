@@ -54,7 +54,7 @@ We will break this up into three parts: (1) Downloading the SDK and importing fr
 
     **Application Name:** name of your application  
     **Description:** Describe it.  
-    **Redirect URIs:** This can be anything, really. Follow format <unique-prefix>://<callback>. We're using this for the login function, so you can call it something like login://returnAfterLogin.  
+    **Redirect URIs:** This can be anything, really. Follow format unique-prefix://callback. We're using this for the login function, so you can call it something like login://returnAfterLogin.  
     **Bundle ID:** This is the ID for your project, of the form com.company.ProjectName  
 
     Make note of the client ID and secret, this will be used later.
