@@ -17,7 +17,7 @@ class SpotifyLoginViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        NotificationCenter.default.addObserver(self, selector: #selector(SpotifyLoginViewController.updateAfterLogin), name: NSNotification.Name(rawValue: "loginSuccessfull"), object: nil)
+        NotificationCenter.default.addObserver(self, selector: #selector(SpotifyLoginViewController.updateAfterLogin), name: NSNotification.Name(rawValue: "loginSuccessful"), object: nil)
 
         // Do any additional setup after loading the view.
     }
@@ -35,10 +35,14 @@ class SpotifyLoginViewController: UIViewController {
     }
     
     @IBAction func continueButtonPressed(_ sender: UIButton) {
-        performSegue(withIdentifier: segueIdentifier, sender: self)
+        SpotifyManager.shared.loginClient().then { something -> Void in
+            self.performSegue(withIdentifier: self.segueIdentifier, sender: self)
+            }.catch { err in
+                print(err)
+        }
     }
     
-    func updateAfterLogin() {
+    func updateAfterLogin(notification: NSNotification) {
         SpotifyManager.shared.updateAfterFirstLogin()
         performSegue(withIdentifier: segueIdentifier, sender: self)
     }

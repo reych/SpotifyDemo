@@ -11,6 +11,8 @@ import UIKit
 import SafariServices
 import AVFoundation
 import PromiseKit
+import Alamofire
+import SwiftyJSON
 
 class SpotifyManager: NSObject, SPTAudioStreamingPlaybackDelegate, SPTAudioStreamingDelegate{
     
@@ -107,6 +109,49 @@ class SpotifyManager: NSObject, SPTAudioStreamingPlaybackDelegate, SPTAudioStrea
         }
         
     }
+    
+    func loginClient() -> Promise<Any>{
+        print("loginClient")
+        
+        return Promise { fulfill, reject in
+            let path:String = "https://accounts.spotify.com/api/token"
+            let params:[String:String] = ["grant_type":"client_credentials"]
+            
+            let clientID = "484e3d627b7d4af9b8d3be79638b678f" // put your client ID here
+            let clientSecret = "093d7ad132ed44e592bb053b57a9d377"
+            
+            let credentials = "\(clientID):\(clientSecret)"
+            let plainData = credentials.data(using: String.Encoding.utf8)
+            let base64string = plainData?.base64EncodedString(options: Data.Base64EncodingOptions(rawValue: 0))
+            let headers:[String:String] = ["Authorization":"Basic \(base64string!)"]
+            
+            
+            Alamofire.request(path, method: .post, parameters: params, encoding: URLEncoding.default, headers: headers).responseJSON(completionHandler: { (data) in
+                
+                if(data.error != nil) {
+                    reject(data.error!)
+                } else {
+                    let json = JSON(data.result.value )
+                    let accessToken = json["access_token"].stringValue
+                    let expiresIn = json["expires_in"].intValue
+                    print("json\n: \(json)")
+                    print("accessToken \(accessToken)")
+                    self.session = SPTSession(userName: "", accessToken: accessToken, expirationTimeInterval: TimeInterval(expiresIn))
+                    print(self.session.accessToken)
+                    
+                    print("got credentials")
+                    
+                    fulfill(data)
+                }
+                
+            })
+            
+            
+            
+        }
+        
+    }
+
     
     func isPremiumAccount() -> Bool{
         return isPremium

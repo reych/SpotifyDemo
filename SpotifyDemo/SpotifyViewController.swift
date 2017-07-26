@@ -34,8 +34,8 @@ class SpotifyViewController: UIViewController, UICollectionViewDelegate, UIColle
                     print("got playlist snapshot")
                     self.tracks = items as? Array<SPTPlaylistTrack>
                     
-                    let url = self.tracks?[0].previewURL.absoluteString
-                    print(url!)
+                    //let url = self.tracks?[0].previewURL.absoluteString
+                    //print(url!)
                     self.collectionView.reloadData()
                 }
             }

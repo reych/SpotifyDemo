@@ -2,6 +2,15 @@
 <Workspace
    version = "1.0">
    <FileRef
+      location = "group:SpotifyDemo/SpotifyDemo-Bridging-Header.h">
+   </FileRef>
+   <FileRef
+      location = "group:SpotifyDemo/SpotifyLoginViewController.swift">
+   </FileRef>
+   <FileRef
+      location = "group:SpotifyDemo/SpotifyViewController.swift">
+   </FileRef>
+   <FileRef
       location = "group:SpotifyDemo.xcodeproj">
    </FileRef>
    <FileRef

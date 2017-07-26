@@ -6,7 +6,9 @@ target 'SpotifyDemo' do
   use_frameworks!
 
   # Pods for SpotifyDemo
-  pod "PromiseKit", "~> 4.0"
+  pod 'PromiseKit'
+  pod 'Alamofire'
+  pod 'SwiftyJSON'
 
   target 'SpotifyDemoTests' do
     inherit! :search_paths

@@ -22,7 +22,7 @@
 			<key>CFBundleTypeRole</key>
 			<string>Editor</string>
 			<key>CFBundleURLName</key>
-			<string>com.test.SpotifyTest.spotify-auth</string>
+			<string>com.demo.SpotifyDemo.spotify-auth</string>
 			<key>CFBundleURLSchemes</key>
 			<array>
 				<string>spotify-test-login</string>
